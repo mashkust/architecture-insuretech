@@ -67,12 +67,11 @@ kubectl get hpa -w
 kubectl get pods -w
 kubectl top pods
 ```
+// картинки
+Анализ:
+- в kubectl get hpa -w увеличилось значение REPLICAS;
+- в kubectl get pods -w появился новый pod;
+- событие SuccessfulRescale: New size: 2; reason: memory resource utilization (percentage of request) above target в kubectl describe hpa scaletestapp-hpa.
 
-Факт масштабирования подтверждается:
-
-- в `kubectl get hpa -w`, где увеличилось значение `REPLICAS`;
-- выводом `kubectl get pods -w`, где появился новый pod;
-- событием `SuccessfulRescale: New size: 2; reason: memory resource utilization (percentage of request) above target` в `kubectl describe hpa scaletestapp-hpa`.
-
-По выводу `kubectl describe hpa scaletestapp-hpa` видно, что Horizontal Pod Autoscaler успешно получил метрики памяти (`ScalingActive=True`, `ValidMetricFound`) и зафиксировал превышение целевого значения: `85% / 80%`.
+По выводу kubectl describe hpa scaletestapp-hpa видно, что Horizontal Pod Autoscaler успешно получил метрики памяти (ScalingActive=True, ValidMetricFound) и зафиксировал превышение целевого значения: 85% / 80%.
 После этого HPA выполнил масштабирование Deployment с 1 до 2 реплик, что подтверждается событием. Таким образом, HPA корректно отреагировал на рост потребления памяти и увеличил число реплик приложения.
