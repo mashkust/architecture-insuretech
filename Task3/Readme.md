@@ -9,23 +9,11 @@
 
 ### Предлагаемое решение
 
-- Перевести распространение продуктовых данных на Event Streaming.
+- Перевести обмен данными о продуктах/тарифах на Event Streaming.
 - Перевести передачу данных об оформленных страховках из core-app в ins-comp-settlement на Event Streaming.
 - Использовать Transactional Outbox в ins-product-aggregator и core-app.
 - Синхронные вызовы оставить только для пользовательских и внешних интеграционных сценариев.
 
-Для повышения устойчивости и масштабируемости синхронные batch/polling-взаимодействия заменены на Event Streaming.  
+Для повышения устойчивости и масштабируемости обмен данными перешел на Event Streaming.  
 ins-product-aggregator публикует изменения продуктового каталога, а core-app - события об оформленных страховках.  
 Для гарантированной публикации событий используется Transactional Outbox.
-
-### Что изменено на диаграмме
-
-- Добавлен event-broker.
-- Добавлены product-outbox-publisher и core-outbox-publisher.
-- Удалены синхронные связи:
-  - core-app - ins-product-aggregator
-  - ins-comp-settlement - ins-product-aggregator
-  - ins-comp-settlement - core-app
-- Добавлены асинхронные события:
-  - обновления продуктов и тарифов
-  - события об оформленных страховках

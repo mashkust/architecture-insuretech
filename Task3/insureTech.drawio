@@ -1,9 +1,12 @@
 <mxfile host="65bd71144e">
     <diagram id="E1ATQbbVo_tt4r2Ud8J2" name="InsureTech">
-        <mxGraphModel dx="-624" dy="3365" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="-1629" dy="2229" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="jBlAzt2zn50tZP4apZ7H-1" parent="1" style="whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+                    <mxGeometry height="1270" width="1930" x="2820" y="-320" as="geometry"/>
+                </mxCell>
                 <object placeholders="1" c4Name="Event-broker" c4Type="Container" c4Technology="Kafka, RabbitMQ" c4Description="Передача продуктовых и страховых событий" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Pr_oVbiCSyd2xeGcRXZ_-38">
                     <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
                         <mxGeometry height="120" width="240" x="3690" y="320" as="geometry"/>
@@ -11,7 +14,7 @@
                 </object>
                 <object placeholders="1" c4Type="core-db" c4Container="Container" c4Technology="PostgreSQL" c4Description="БД используется для хранения тарифов страховых компаний, а также заявок клиентов на страховые продукты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Pr_oVbiCSyd2xeGcRXZ_-39">
                     <mxCell parent="1" style="shape=cylinder3;size=5.9999511718749545;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
-                        <mxGeometry height="120" width="240" x="3290" y="430" as="geometry"/>
+                        <mxGeometry height="120" width="240" x="3330" y="430" as="geometry"/>
                     </mxCell>
                 </object>
                 <mxCell id="Pr_oVbiCSyd2xeGcRXZ_-40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#23a2d9, #163542);strokeColor=light-dark(#1786b8, #45a4ce);fontColor=#000000;" value="&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;core-outbox-publisher&lt;br&gt;[Outbox Publisher]&lt;/span&gt;" vertex="1">
@@ -35,7 +38,7 @@
                 <mxCell id="Pr_oVbiCSyd2xeGcRXZ_-44" edge="1" parent="1" source="Pr_oVbiCSyd2xeGcRXZ_-65" style="endArrow=blockThin;html=1;strokeColor=#828282;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" value="TCP&#xa;работа с данными">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="3400" y="340" as="sourcePoint"/>
-                        <mxPoint x="3400" y="430" as="targetPoint"/>
+                        <mxPoint x="3450" y="430" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="Pr_oVbiCSyd2xeGcRXZ_-45" edge="1" parent="1" source="Pr_oVbiCSyd2xeGcRXZ_-65" style="endArrow=blockThin;html=1;strokeColor=#828282;fontSize=10;exitX=1.005;exitY=0.143;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.103;entryY=1.019;entryDx=0;entryDy=0;entryPerimeter=0;" target="Pr_oVbiCSyd2xeGcRXZ_-67" value="REST&#xa;получение/сохранение данных клиентов">
@@ -106,14 +109,12 @@
                         <mxPoint x="3520" y="305" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="Pr_oVbiCSyd2xeGcRXZ_-56" edge="1" parent="1" source="Pr_oVbiCSyd2xeGcRXZ_-65" style="endArrow=blockThin;html=1;strokeColor=#FF5958;fontSize=10;exitX=0.001;exitY=0.926;exitDx=0;exitDy=0;exitPerimeter=0;" value="Transactional Outbox&#xa;события оформленных страховок">
-                    <mxGeometry relative="1" x="0.648" as="geometry">
+                <mxCell id="Pr_oVbiCSyd2xeGcRXZ_-56" edge="1" parent="1" source="Pr_oVbiCSyd2xeGcRXZ_-65" style="endArrow=blockThin;html=1;strokeColor=#FF5958;fontSize=10;exitX=0.25;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" value="Transactional Outbox&#xa;события оформленных страховок">
+                    <mxGeometry relative="1" x="0.6426" as="geometry">
                         <mxPoint as="offset"/>
-                        <Array as="points">
-                            <mxPoint x="3280.48" y="415"/>
-                        </Array>
-                        <mxPoint x="3280.48" y="325" as="sourcePoint"/>
-                        <mxPoint x="3280" y="650" as="targetPoint"/>
+                        <Array as="points"/>
+                        <mxPoint x="3280.24" y="319.9999999999999" as="sourcePoint"/>
+                        <mxPoint x="3280" y="648.88" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="Pr_oVbiCSyd2xeGcRXZ_-57" edge="1" parent="1" source="Pr_oVbiCSyd2xeGcRXZ_-40" style="endArrow=blockThin;html=1;strokeColor=#FF5958;fontSize=10;" value="Event Streaming&lt;br&gt;InsuranceIssued /&amp;nbsp;&lt;div&gt;InsuranceUpdated /&amp;nbsp;&lt;/div&gt;&lt;div&gt;InsuranceCancelled&lt;/div&gt;">
@@ -149,13 +150,13 @@
                         <mxGeometry height="120" width="240" x="2850" y="230" as="geometry"/>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Name="Клиент" c4Type="Person" c4Description="Клиент" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Pr_oVbiCSyd2xeGcRXZ_-63">
-                    <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1">
+                <object placeholders="1" c4Name="Клиент" c4Type="Person" c4Description="Клиент" label="%c4Name%&#xa;[%c4Type%]&#xa;&#xa;%c4Description%" id="Pr_oVbiCSyd2xeGcRXZ_-63">
+                    <mxCell parent="1" style="fontSize=11;dashed=0;fillColor=#083F75;strokeColor=#06315C;fontColor=light-dark(#FFFFFF,#FFFFFF);shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;labelBackgroundColor=none;labelBorderColor=none;" vertex="1">
                         <mxGeometry height="180" width="200" x="3300" y="-310" as="geometry"/>
                     </mxCell>
                 </object>
-                <object placeholders="1" c4Type="InsureTech Web" c4Container="Container" c4Technology="JavaScript, React" c4Description="Веб-приложение InsureTech" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Pr_oVbiCSyd2xeGcRXZ_-64">
-                    <mxCell parent="1" style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#118ACD;fillColor=#23A2D9;strokeColor=#118ACD;strokeColor2=#0E7DAD;fontSize=12;fontColor=#ffffff;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+                <object placeholders="1" c4Type="InsureTech Web" c4Container="Container" c4Technology="JavaScript, React" c4Description="Веб-приложение InsureTech" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="Pr_oVbiCSyd2xeGcRXZ_-64">
+                    <mxCell parent="1" style="shape=mxgraph.c4.webBrowserContainer2;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#118ACD;fillColor=#23A2D9;strokeColor=#118ACD;strokeColor2=#0E7DAD;fontSize=12;fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
                         <mxGeometry height="160" width="240" x="3280" y="-60" as="geometry"/>
                     </mxCell>
                 </object>

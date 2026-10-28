@@ -67,8 +67,11 @@ kubectl get hpa -w
 kubectl get pods -w
 kubectl top pods
 ```
-// картинки
+
+### [hpa_logs](./hpa_logs.png)
+
 Анализ:
+
 - в kubectl get hpa -w увеличилось значение REPLICAS;
 - в kubectl get pods -w появился новый pod;
 - событие SuccessfulRescale: New size: 2; reason: memory resource utilization (percentage of request) above target в kubectl describe hpa scaletestapp-hpa.
